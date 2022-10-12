@@ -34,10 +34,12 @@ By default, it will cache all URL if no URL apply to this filter.
 ```
 add_filter(
     'cache_http_reponse/include',
-    [
-        'https://apihostname1.name/api',
-        'https://apihostname2.name/api'
-    ]
+    function($urls) {
+        $urls[] = 'https://apihostname1.name/api';
+        $urls[] = 'https://apihostname2.name/api';
+
+        return $urls;
+    }
 );
 ```
 
@@ -47,32 +49,36 @@ Exclude URL from the cache.
 ```
 add_filter(
     'cache_http_reponse/exclude',
-    [
-        'https://apihostname1.name/api',
-        'https://apihostname2.name/api'
-    ]
+    function($urls) {
+        $urls[] = 'https://apihostname1.name/api';
+        $urls[] = 'https://apihostname2.name/api';
+
+        return $urls;
+    }
 );
 ```
 
 #### `cache_http_reponse/ttl`  
-Cache Time To Live. By default, it is set to 300 seconds.
+Cache lifespan in seconds. By default, it is set to 300 seconds.
 
 ```
-add_filter('cache_http_reponse/ttl', 300);
+add_filter('cache_http_reponse/ttl', function() {
+    return 300;
+});
 ```
 
 #### `cache_http_reponse/exclude_wporg`  
 Exclude *.wordpress.org URL. By default it is set to `true`.
 
 ```
-add_filter('cache_http_reponse/exclude_wporg', true);
+add_filter('cache_http_reponse/exclude_wporg', '__return_true');
 ```
 
 #### `cache_http_reponse/exclude_localhost`  
 Exclude Site URL. By default it is set to `true`.
 
 ```
-add_filter('cache_http_reponse/exclude_localhost', true);
+add_filter('cache_http_reponse/exclude_localhost', '__return_true');
 ```
 
 ## Changelog

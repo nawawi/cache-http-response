@@ -59,12 +59,12 @@ final class cache_http_response
         $cache_key = $this->cache_key($url);
 
         $cache_ttl = (int) apply_filters('cache_http_reponse/ttl', $this->cache_ttl);
-        if (!empty($cache_ttl)) {
-            $cache_ttl = 300;
+        if (empty($cache_ttl)) {
+            $cache_ttl = $this->cache_ttl;
         }
 
-        $include_list = apply_filters('cache_http_reponse/include', $this->cache_include);
-        $exclude_list = apply_filters('cache_http_reponse/exclude', $this->cache_exclude);
+        $include_list = array_unique(apply_filters('cache_http_reponse/include', $this->cache_include));
+        $exclude_list = array_unique(apply_filters('cache_http_reponse/exclude', $this->cache_exclude));
 
         if (empty($include_list) && empty($exclude_list)) {
             set_transient($cache_key, $response, $cache_ttl);

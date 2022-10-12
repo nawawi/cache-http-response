@@ -1,0 +1,26 @@
+{
+    "name": "nawawi/cache-http-response",
+    "description": "Cache HTTP API Call response.",
+    "type": "wordpress-plugin",
+    "license": "GPLv2 or later",
+    "keywords": [
+        "cache",
+        "wordpress-plugin"
+    ],
+    "authors": [ {
+        "name": "Nawawi Jamili",
+        "homepage": "https://github.com/nawawi"
+    } ],
+    "repositories": [ {
+        "type": "vcs",
+        "url": "https://github.com/nawawi/cache-http-response"
+    } ],
+    "support": {
+        "issues": "https://github.com/nawawi/cache-http-response/issues",
+        "source": "https://github.com/nawawi/cache-http-response"
+    },
+    "readme": "README.md",
+    "require": {
+        "php": ">=7.4"
+    }
+}

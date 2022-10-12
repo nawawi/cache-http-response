@@ -9,7 +9,7 @@ Performance tweaks for WordPress to cache WordPress API Call responses made by o
 
 ### Manual Installation
 
-1. Download the plugin zip file [https://github.com/nawawi/cache-http-response/archive/main.zip](https://github.com/nawawi/cache-http-response/archive/main.zip) and save it as `cache-http-response.zip`.
+1. Download the plugin [`zip file`](https://github.com/nawawi/cache-http-response/archive/main.zip) and save it as [`cache-http-response.zip`](https://github.com/nawawi/cache-http-response/archive/main.zip).
 1. Upload and install the plugin zip file `cache-http-response.zip` through the WordPress plugins screen directly.
 2. Activate the plugin through the ‘Plugins’ screen in WordPress.
 

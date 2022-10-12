@@ -23,6 +23,41 @@ Performance tweaks for WordPress to cache WordPress API Call responses made by o
 ### Automatic Updates
 Performance Improvements for WooCommerce supports the [GitHub Updater plugin](https://github.com/afragen/github-updater) WordPress. The plugin enables automatic updates from this GitHub Repository. You will find all information about the how and why at the [plugin wiki page](https://github.com/afragen/github-updater/wiki).
 
+## Settings
+
+This plugin behaviour can be changed using a filter hook.
+
+### Include URL
+`cache_http_reponse/include` - By default, it will cache all URL if no URL apply to this filter.
+
+```
+add_filter('cache_http_reponse/include', ['https://apihostname1.name/api', 'https://apihostname1.name/api']);
+```
+
+`cache_http_reponse/exclude` - Exclude URL from the cache.
+
+```
+add_filter('cache_http_reponse/exclude', ['https://apihostname1.name/api', 'https://apihostname1.name/api']);
+```
+
+`cache_http_reponse/ttl` - Cache Time To Live. By default, it is set to 300 seconds.
+
+```
+add_filter('cache_http_reponse/ttl', 300);
+```
+
+`cache_http_reponse/exclude_wporg` - Exclude *.wordpress.org URL. By default it is set to `true`.
+
+```
+add_filter('cache_http_reponse/exclude_wporg', true);
+```
+
+`cache_http_reponse/exclude_localhost` - Exclude Site URL. By default it is set to `true`.
+
+```
+add_filter('cache_http_reponse/exclude_localhost', true);
+```
+
 ## Changelog
 
 **1.0.0**

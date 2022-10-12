@@ -28,32 +28,36 @@ Cache HTTP Response supports the [GitHub Updater plugin](https://github.com/afra
 
 This plugin behaviour can be changed using a filter hook.
 
-### Include URL
-`cache_http_reponse/include` - By default, it will cache all URL if no URL apply to this filter.
+### `cache_http_reponse/include`  
+By default, it will cache all URL if no URL apply to this filter.
 
 ```
 add_filter('cache_http_reponse/include', ['https://apihostname1.name/api', 'https://apihostname1.name/api']);
 ```
 
-`cache_http_reponse/exclude` - Exclude URL from the cache.
+### `cache_http_reponse/exclude`  
+Exclude URL from the cache.
 
 ```
 add_filter('cache_http_reponse/exclude', ['https://apihostname1.name/api', 'https://apihostname1.name/api']);
 ```
 
-`cache_http_reponse/ttl` - Cache Time To Live. By default, it is set to 300 seconds.
+### `cache_http_reponse/ttl`  
+Cache Time To Live. By default, it is set to 300 seconds.
 
 ```
 add_filter('cache_http_reponse/ttl', 300);
 ```
 
-`cache_http_reponse/exclude_wporg` - Exclude *.wordpress.org URL. By default it is set to `true`.
+### `cache_http_reponse/exclude_wporg`  
+Exclude *.wordpress.org URL. By default it is set to `true`.
 
 ```
 add_filter('cache_http_reponse/exclude_wporg', true);
 ```
 
-`cache_http_reponse/exclude_localhost` - Exclude Site URL. By default it is set to `true`.
+### `cache_http_reponse/exclude_localhost`  
+Exclude Site URL. By default it is set to `true`.
 
 ```
 add_filter('cache_http_reponse/exclude_localhost', true);

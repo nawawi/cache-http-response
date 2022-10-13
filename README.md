@@ -7,21 +7,21 @@ Performance tweaks for WordPress to cache WordPress API Call responses made by o
 
 ## Installation
 
-### Manual Installation
+#### Manual Installation
 
 1. Download the plugin [`zip file`](https://github.com/nawawi/cache-http-response/archive/main.zip) and save it as [`cache-http-response.zip`](https://github.com/nawawi/cache-http-response/archive/main.zip).
 1. Upload and install the plugin zip file `cache-http-response.zip` through the WordPress plugins screen directly.
 2. Activate the plugin through the ‘Plugins’ screen in WordPress.
 
-### Via WP-CLI
+#### Via WP-CLI
 [`WP-CLI`](http://wp-cli.org/) is the official command-line interface for WordPress. You can install cache-http-response using the wp command like this:
 
 ```wp plugin install --activate https://github.com/nawawi/cache-http-response/archive/main.zip```
 
-### Update via WP-CLI
+#### Update via WP-CLI
 ```wp plugin install --activate https://github.com/nawawi/cache-http-response/archive/main.zip --force```
 
-### Automatic Updates
+#### Automatic Updates
 Cache HTTP Response supports the [GitHub Updater plugin](https://github.com/afragen/github-updater) WordPress. The plugin enables automatic updates from this GitHub Repository. You will find all information about the how and why at the [plugin wiki page](https://github.com/afragen/github-updater/wiki).
 
 ## Settings
@@ -62,23 +62,32 @@ add_filter(
 Cache lifespan in seconds. By default, it is set to 300 seconds.
 
 ```
-add_filter('cache_http_reponse/ttl', function() {
-    return 300;
-});
+add_filter(
+    'cache_http_reponse/ttl',
+    function() {
+        return 300;
+    }
+);
 ```
 
 #### `cache_http_reponse/exclude_wporg`  
 Exclude *.wordpress.org URL. By default it is set to `true`.
 
 ```
-add_filter('cache_http_reponse/exclude_wporg', '__return_true');
+add_filter(
+    'cache_http_reponse/exclude_wporg',
+    '__return_true'
+);
 ```
 
 #### `cache_http_reponse/exclude_localhost`  
 Exclude Site URL. By default it is set to `true`.
 
 ```
-add_filter('cache_http_reponse/exclude_localhost', '__return_true');
+add_filter(
+    'cache_http_reponse/exclude_localhost',
+    '__return_true'
+);
 ```
 
 ## Changelog

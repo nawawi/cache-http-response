@@ -14,7 +14,7 @@ Performance tweaks for WordPress to cache WordPress API Call responses made by o
 2. Activate the plugin through the ‘Plugins’ screen in WordPress.
 
 ### Via WP-CLI
-[`WP-CLI`](http://wp-cli.org/) is the official command-line interface for WordPress. You can install performance-improvements-for-woocommerce using the wp command like this:
+[`WP-CLI`](http://wp-cli.org/) is the official command-line interface for WordPress. You can install cache-http-response using the wp command like this:
 
 ```wp plugin install --activate https://github.com/nawawi/cache-http-response/archive/main.zip```
 

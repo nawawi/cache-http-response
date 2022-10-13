@@ -29,8 +29,37 @@ wp plugin install --activate https://github.com/nawawi/cache-http-response/archi
 Cache HTTP Response supports the [GitHub Updater plugin](https://github.com/afragen/github-updater) WordPress. The plugin enables automatic updates from this GitHub Repository. You will find all information about the how and why at the [plugin wiki page](https://github.com/afragen/github-updater/wiki).
 
 ## Settings
+This plugin behaviour can be changed using a filter hook. You may load it as a ['mu-plugins'](https://wordpress.org/support/article/must-use-plugins/) script. Copy this code and saved it in `wp-content/mu-plugins/cache-http-response-hook.php`.
+```php
+<?php
+add_filter(
+    'cache_http_reponse/ttl',
+    function() {
+        // 1 hour.
+        return 3600;
+    }
+);
 
-This plugin behaviour can be changed using a filter hook.
+add_filter(
+    'cache_http_reponse/include',
+    function($urls) {
+        //$urls[] = '';
+
+        return $urls;
+    }
+);
+
+add_filter(
+    'cache_http_reponse/exclude',
+    function($urls) {
+        //$urls[] = '';
+
+        return $urls;
+    }
+);
+```
+
+## Filter Hooks
 
 #### `cache_http_reponse/include`  
 By default, it will cache all URL if no URL apply to this filter.
